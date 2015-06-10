@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :shops
+  devise_for :designers
   resources :shops
   resources :designers
   root to: "designers#index"
