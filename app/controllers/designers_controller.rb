@@ -10,6 +10,7 @@ class DesignersController < ApplicationController
   # GET /designers/1
   # GET /designers/1.json
   def show
+    @conversations = Designer.find(params[:id]).mailbox.conversations
   end
 
   # GET /designers/new

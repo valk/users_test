@@ -20,5 +20,28 @@
   <%= @designer.details %>
 </p>
 
+<h2>User's conversations</h1>
+
+<table class="conversations">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>subject</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @conversations.each do |conversation| %>
+     <tr>
+      <td>
+        <%= conversation.id %>
+      </td>
+      <td>
+        <%= conversation.subject %>
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_designer_path(@designer) %> |
 <%= link_to 'Back', designers_path %>

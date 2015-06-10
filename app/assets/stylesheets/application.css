@@ -17,3 +17,7 @@
 .status {
   background: orange; color: #000;
 }
+
+.conversations {
+  border: 1px solid black;
+}
