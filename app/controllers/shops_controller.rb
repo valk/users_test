@@ -1,5 +1,4 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_designer!
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   # GET /shops
