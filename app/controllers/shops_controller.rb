@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_designer!
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   # GET /shops
@@ -60,6 +61,18 @@ class ShopsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def message
+    @shop = Shop.find(params[:id])
+
+    if current_user
+      current_user.send_message(@shop, "Body", "subject")
+      redirect_to :back, notice: "Message has been sent"
+    else
+      redirect_to :back, notice: "ERROR"
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -10,5 +10,19 @@
   <%= @shop.details %>
 </p>
 
+
+<strong>Message Shop</strong>
+<%= form_for @shop, url: { action: "message" } do |f| %>
+  <p>
+    Subject <br/>
+    <%= text_field_tag :subject %>
+  </p>
+  <p>
+    Message <br/>
+    <%= text_area_tag :body %>
+  </p>
+  <%= f.submit "Send Message" %>
+<% end %>
+
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>

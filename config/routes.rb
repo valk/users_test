@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :shops
   devise_for :designers
-  resources :shops
+  resources :shops do
+    member do
+      patch 'message'
+    end
+  end
   resources :designers
-  root to: "designers#index"
+  root to: "shops#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
