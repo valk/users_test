@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @conversations = Shop.find(params[:id]).mailbox.conversations
   end
 
   # GET /shops/new
@@ -65,7 +66,7 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
 
     if current_user
-      current_user.send_message(@shop, "Body", "subject")
+      current_user.send_message(@shop, params[:subject], params[:body])
       redirect_to :back, notice: "Message has been sent"
     else
       redirect_to :back, notice: "ERROR"

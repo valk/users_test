@@ -10,12 +10,16 @@
 
   <div class="status">
     <div class="user">
-      Singed in as <%= current_user.email if logged_in? %>
+      <% if logged_in? %>
+        Signed in as <%= current_user.email %>
+        <%= link_to('Logout', destroy_designer_session_path, :method => :delete) %> 
+      <% end %>
     </div>
     <div class="menu">
       <%= link_to 'Shops', shops_path %> |
       <%= link_to 'Designers', designers_path %> |
-      <%= link_to 'My Profile', designer_path(current_designer) if logged_in? %>
+      <%= link_to 'My Profile', current_user_path if logged_in? %>
+      <% current_user_path %>
     </div>
 
   </div>

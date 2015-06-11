@@ -8,9 +8,9 @@
 
 
 20.times do |t|
-  Designer.create! email: "val.hoffman+#{t}@gmail.com", name: "Designer-#{t}", second_name: "K", photo: "/etc/photo/#{t}.jpg", password: "asdfasdf"
+  Designer.create! email: "val.hoffman+#{t}@gmail.com", name: "Designer-#{t}", second_name: "K-#{t}", photo: "/etc/photo/#{t}.jpg", password: "asdfasdf"
 end
 
 20.times do |t|
-  Shop.create!  email: "val.hoffman+#{t}@gmail.com", name: "Shop-#{t}", details: "Cool shop #{t}", password: "asdfasdf"
+  Shop.create!  email: "shop+#{t}@gmail.com", name: "Shop-#{t}", details: "Cool shop #{t}", password: "asdfasdf"
 end
