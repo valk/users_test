@@ -1,0 +1,8 @@
+<%= form_tag({controller: "messages", action: "create"}, method: :post) do |f| %>
+  <%= hidden_field_tag "designer_id", @designer_id %>
+  <p>Subject</p>
+  <p><%= text_field_tag :subject %></p>
+  <p>Body</p>
+  <p><%= text_area_tag :body %></p>
+  <p><%= submit_tag 'Send' %></p>
+<% end %>

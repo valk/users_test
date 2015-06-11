@@ -31,6 +31,7 @@
   <tr>
     <th>id</th>
     <th>subject</th>
+    <th>actions</th>
   </tr>
   </thead>
   <tbody>
@@ -41,6 +42,9 @@
       </td>
       <td>
         <%= conversation.subject %>
+      </td>
+      <td>
+        <%= link_to "Reply", new_message_path(designer_id: conversation.originator.id )  %>
       </td>
      </tr>
     <% end %>

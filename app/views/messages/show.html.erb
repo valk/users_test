@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @designer.name %>
+</p>
+
+<p>
+  <strong>Second name:</strong>
+  <%= @designer.second_name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @designer.photo %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @designer.details %>
+</p>
+
+<h2>User's conversations</h1>
+
+<table class="conversations">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>subject</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @conversations.each do |conversation| %>
+     <tr>
+      <td>
+        <%= conversation.id %>
+      </td>
+      <td>
+        <%= conversation.subject %>
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', :back %>
